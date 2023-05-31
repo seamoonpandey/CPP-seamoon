@@ -1,6 +1,10 @@
 #include<iostream>
 using namespace std;
 
+/* 
+private means we can just access them inside the class
+and public means we can even access them by calling them
+ */
 class Student{
     private:
     int rollNo,age;
