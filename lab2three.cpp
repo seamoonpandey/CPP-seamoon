@@ -1,5 +1,5 @@
 /*
-WAP using class and objects. Use the member function and illustrating the concept of default arguments.
+WAP using class and objects. Use the member function to initialize the class data members using outside the class definition
  */
 
 #include <iostream>
@@ -9,11 +9,12 @@ using namespace std;
 class Addition
 {
 public:
-    int addition(int a = 0, int b = 0, int c = 0)
-    {
-        return a + b + c;
-    }
+  int addition(int, int , int);
 };
+
+int Addition ::addition(int a=0, int b=0, int c=0){
+    return a+b+c;
+}
 
 int main()
 {
