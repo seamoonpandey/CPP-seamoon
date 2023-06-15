@@ -1,1 +1,0 @@
-(price>=2000)?(price-0.05*price):price
