@@ -39,7 +39,7 @@ int main()
 {
     ClassA one(3);
     ClassB two(6);
-    cout<<adder(one, two)<<endl;;
+    cout<<adder(one, two)<<endl;
 
     return 0;
 }
