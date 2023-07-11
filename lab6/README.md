@@ -39,3 +39,7 @@ int main() {
 ### Destructors in C++
 
 Destructors are always called in the reverse order of the constructors. Destructors can be called explicitly using the delete operator.The destructor is used to deallocate any resources that were allocated by the constructor for that object.
+
+### Virtual destructors
+
+A virtual destructor is a destructor that has the virtual keyword in its declaration.Virtual destructors are used to ensure that the correct destructor is called, regardless of the type of the pointer that is used to delete the object.Virtual destructors are important for preventing memory leaks.
