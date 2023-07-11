@@ -1,15 +1,13 @@
-# Lab6 
+# Lab6
 
 1. WAP to illustrate the working of constructor in single and multiple inheritances
 2. Add destructor to the first program and show the use of constructor and destructor
 3. WAP to implement runtime polymorphism
 4. WAP to illustrate the use of virtual destructors.
 
+## Theory
 
-# Theory
-
-
-## Constructors in Single and Multiple Inheritances in C++
+### Constructors in Single and Multiple Inheritances in C++
 
 In C++, a constructor is a special member function that is automatically called when an object of a class is created. The constructor is responsible for initializing the object's data members.
 
@@ -37,5 +35,7 @@ int main() {
   return 0;
 }
 ```
-## Destructors in C++
+
+### Destructors in C++
+
 Destructors are always called in the reverse order of the constructors. Destructors can be called explicitly using the delete operator.The destructor is used to deallocate any resources that were allocated by the constructor for that object.
