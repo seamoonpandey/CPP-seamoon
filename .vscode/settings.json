@@ -1,8 +1,9 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp",
-        "typeinfo": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "typeinfo": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "cSpell.words": ["deallocate"]
 }
