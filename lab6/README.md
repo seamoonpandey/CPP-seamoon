@@ -43,3 +43,20 @@ Destructors are always called in the reverse order of the constructors. Destruct
 ### Virtual destructors
 
 A virtual destructor is a destructor that has the virtual keyword in its declaration.Virtual destructors are used to ensure that the correct destructor is called, regardless of the type of the pointer that is used to delete the object.Virtual destructors are important for preventing memory leaks.
+
+### Polymorphism in C++
+
+Polymorphism, is one of the most significant features of Object-Oriented Programming. Polymorphism means innumerable forms. 
+
+#### Compile-Time Polymorphism
+
+When the relationship between the definition of different functions and their function calls, is determined during the compile-time, it is known as compile-time polymorphism. This type of polymorphism is also known as static or early binding polymorphism. All the methods of compile-time polymorphism get called or invoked during the compile time.
+You can implement compile-time polymorphism using function overloading and operator overloading.
+
+#### Runtime Polymorphism
+
+In runtime polymorphism, the compiler resolves the object at run time and then it decides which function call should be associated with that object. It is also known as dynamic or late binding polymorphism. This type of polymorphism is executed through virtual functions and function overriding. All the methods of runtime polymorphism get invoked during the run time.
+Method overriding is an application of run time polymorphism where two or more functions with the same name, arguments, and return type accompany different classes of the same structure. It has slower execution rate that that of the compile time polymorphism since all the methods that need to be executed are called during run time. It is better for dealing with complex problems.
+
+* Function overriding
+* Virtual functions
