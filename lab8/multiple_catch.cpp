@@ -51,9 +51,21 @@ int main() {
 
 
 /*
-In this program we just illustrated a instance of exception handling with the cpp classes.
-Here we made a class Divider and a method for divider divide which divides the two given numbers and prints.
-There we use a throw keyword to put a string if the denominator is zero.
+In this program we just illustrated a instance of exception handling with the cpp classes with multiple catch blocks.
+The code starts by defining two custom exception classes, DivisionByZeroException and NegativeNumberException, which are derived from the std::exception class. Each of these classes overrides the what() method, which returns a C-style string describing the respective exception.
+class also has a member function divide(). In this function, the program checks for two conditions:
 
-In main function we create two constructors one with invalidness and one correct and put them in different try catch block, so that our app didn't crash.
+    If denominator is zero, it throws a DivisionByZeroException with the message "Error: Division by zero!"
+    If either numerator or denominator is negative, it throws a NegativeNumberException with the message "Error: Negative number not allowed!"
+    If none of the above conditions are met, it performs the division and displays the result.
+        In the main() function, there are three blocks of code where the Divider class is used, each followed by a try-catch block.
+
+    Block 1:
+    It creates an instance of Divider called d1 with the arguments 10 and 0. It then calls the divide() function, which will throw a DivisionByZeroException since the denominator is zero. The catch block for DivisionByZeroException catches this exception and displays the corresponding error message.
+
+    Block 2:
+    It creates an instance of Divider called d2 with the arguments -5 and 2. It calls the divide() function, which will throw a NegativeNumberException since the numerator is negative. The catch block for NegativeNumberException catches this exception and displays the corresponding error message.
+
+    Block 3:
+    It creates an instance of Divider called d3 with the arguments 20 and 5. It calls the divide() function, which successfully performs the division and displays the result.
 */
