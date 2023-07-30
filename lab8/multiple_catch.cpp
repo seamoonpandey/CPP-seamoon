@@ -52,7 +52,7 @@ int main() {
 
 /*
 In this program we just illustrated a instance of exception handling with the cpp classes with multiple catch blocks.
-The code starts by defining two custom exception classes, DivisionByZeroException and NegativeNumberException, which are derived from the std::exception class. Each of these classes overrides the what() method, which returns a C-style string describing the respective exception.
+The code starts by defining two custom exception classes, Indeterminate and NegativeError, which are derived from the std::exception class. Each of these classes overrides the what() method, which returns a C-style string describing the respective exception.
 class also has a member function divide(). In this function, the program checks for two conditions:
 
     If denominator is zero, it throws a DivisionByZeroException with the message "Error: Division by zero!"
