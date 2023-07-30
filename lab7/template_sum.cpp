@@ -19,3 +19,8 @@ int main(){
     return 0;
 
 }
+
+
+/*
+    The program uses a function template to create a generic add function. It can add two integers or two float values, thanks to the template parameter. Demonstrates how function templates allow code reuse for different data types.
+*/

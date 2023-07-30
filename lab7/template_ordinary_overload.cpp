@@ -28,3 +28,7 @@ int main(){
     return 0;
 
 }
+
+/*    The program overloads the template add function with a regular function for adding two float values.
+    When float values are passed, the overloaded function is used instead of the generic template.
+    Illustrates how template functions can be combined with ordinary functions for specific cases.*/

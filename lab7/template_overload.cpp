@@ -28,3 +28,7 @@ int main(){
     return 0;
 
 }
+
+/* 
+    The program defines two function templates: one for adding two values and another for adding three values of the same data type. Shows how function templates can be overloaded based on the number of parameters.
+*/
