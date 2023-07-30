@@ -11,7 +11,7 @@ int main(){
 	// }
 	// cout<<"Done"<<endl;
 
-	ifstream infile("teach.txt");
+	ifstream infile("text_files/teach.txt");
 
 	cout<<infile.rdbuf()<<endl;
 

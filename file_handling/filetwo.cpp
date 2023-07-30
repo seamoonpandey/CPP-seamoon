@@ -6,7 +6,7 @@ int main(){
 
 string str1,str3,str2 ;
 
-ifstream infile("love.txt");
+ifstream infile("text_files/love.txt");
 
 getline(infile,str1);
 getline(infile,str2);
