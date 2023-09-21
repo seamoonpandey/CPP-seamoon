@@ -3,7 +3,7 @@ using namespace std;
 
 enum Gender {female, male};
 
-// Single inheritance
+// Single inheritance if derived only one class this also is an example of heirarchical inheritance
 class Person {
     protected:
         string name;
