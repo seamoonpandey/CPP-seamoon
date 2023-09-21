@@ -262,59 +262,83 @@ This example demonstrates how objects can be used as function arguments and retu
 **6. WAP to find the transpose of given matrix using the concept of OOP.**
 
 ```C++
+/*
+This program features calculation of transpose of matrix using the concepts of matrix
+*/
+
+//preprocessor directives
 #include <iostream>
-#include <string>
 
-class BankAccount {
-private:
-    std::string accountNumber;
-    double balance;
+using namespace std;
 
-public:
-    BankAccount(std::string accNumber, double initialBalance) : accountNumber(accNumber), balance(initialBalance) {}
-
-    // Function to deposit money into the account
-    void deposit(double amount) {
-        balance += amount;
-    }
-
-    // Function to withdraw money from the account
-    bool withdraw(double amount) {
-        if (balance >= amount) {
-            balance -= amount;
-            return true; // Successful withdrawal
+//declaration of Matrix class
+class Matrix{
+    //make the data private
+    private:
+    int rows,columns;//number of rows and columns
+    int **data;//data in the matrix array
+    public:
+    //constructor with the rows and columns size of the matrix
+    Matrix(int rows, int column):rows(rows),columns(columns) {
+        //we make a pointer array to point through the row of the matrix
+        data = new int*[rows];
+        for(int i = 0 ; i < rows ; i++){
+            //here we do not use the aestrik "*" operator for the columns because we do not need to allocate memory for that as it is the part of the row.
+            data[i] = new int[columns]; // here data[i] points to the the initial value of the pointer in the rows array
         }
-        return false; // Insufficient balance
     }
 
-    // Function to get the current balance
-    double getBalance() const {
-        return balance;
+    //getter
+    void getMatrix(){
+        cout<<"Enter Matrix elements"<<endl;
+        for(int i = 0;i<rows ;i++){
+            for(int j = 0;j<columns;j++){
+                cin>>data[i][j];
+            }
+        }
+    }
+    //printer
+     void printMatrix() {
+        cout << "Matrix:" << endl;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                cout << data[i][j] << " ";
+            }
+            cout << endl;
+        }
+     }
+     
+     Matrix transpose(){
+        Matrix temp(columns,rows);
+
+        for(int i = 0; i < rows;i++){
+            for(int j = 0; j < columns;j++){
+                temp.data[j][i] = data[i][j];
+            }
+        }
+        return temp;
+     }
+    //we need to destroy the allocated memory
+    ~Matrix(){
+        for(int i = 0 ; i < rows; i++){
+            //this loop deletes each and every data inside the array
+            delete[] data[i];
+        }
+        delete[] data; //this deletes the array itself
     }
 };
 
-// Function to transfer money from one account to another
-BankAccount transferFunds(const BankAccount& fromAccount, BankAccount& toAccount, double amount) {
-    if (fromAccount.withdraw(amount)) {
-        toAccount.deposit(amount);
-    }
-    return fromAccount; // Return the updated source account
-}
-
-int main() {
-    BankAccount aliceAccount("12345", 1000.0);
-    BankAccount bobAccount("67890", 500.0);
-
-    std::cout << "Alice's initial balance: " << aliceAccount.getBalance() << std::endl;
-    std::cout << "Bob's initial balance: " << bobAccount.getBalance() << std::endl;
-
-    double transferAmount = 300.0;
-    BankAccount updatedAliceAccount = transferFunds(aliceAccount, bobAccount, transferAmount);
-
-    std::cout << "Alice's updated balance after transfer: " << updatedAliceAccount.getBalance() << std::endl;
-    std::cout << "Bob's updated balance after transfer: " << bobAccount.getBalance() << std::endl;
-
+int main(){
+    int r,c;
+    cout<<"Enter the number rows X columns"<<endl;
+    cin>>r>>c;
+    Matrix mat1(r,c);
+    mat1.getMatrix();
+    mat1.printMatrix();
+    Matrix mat2 = mat1.transpose();
+    mat2.printMatrix();
     return 0;
 }
+
 
 ```
